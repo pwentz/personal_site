@@ -9,7 +9,6 @@
 
     <projects
       v-if='projectsMounted'
-      :repos='repos'
     >
     </projects>
 
@@ -43,6 +42,7 @@ export default {
 
   mounted() {
     this.$store.dispatch('LOAD_REPOS')
+    console.log(this.repos)
   },
 
   methods: {
