@@ -1,49 +1,39 @@
 <template>
   <div>
 
-    <div class="orbit"
-         role="region"
-         aria-label="Top Github Repos"
-         data-orbit
+    <div class="carousel
+                slide"
+         data-ride='carousel'
+         data-interval='false'
+         id='repos'
     >
-
-
-      <ul class="orbit-container"
+      <ol
+        class='carousel-indicators'
       >
-        <button class="orbit-previous">
-          Previous Slide
-        </button>
+        <li data-target="#repos" data-slide-to="0" class="active"></li>
+        <li data-target="#repos" data-slide-to="1"></li>
+        <li data-target="#repos" data-slide-to="2"></li>
+      </ol>
 
-        <button class="orbit-next">
-          Next Slide
-        </button>
 
-        <li
-          class='orbit-slide
-                 is-active'
+      <div class="carousel-inner"
+           role='listbox'
+      >
+
+        <repository
+          v-for='repo in $store.state.repos'
+          :repo='repo'
         >
-          {{ this.repos[0].name }}
-        </li>
+        </repository>
 
-        <li
-          class='orbit-slide'
-        >
-          {{ this.repos[1].name }}
-        </li>
+      </div>
 
-        <li
-          class='orbit-slide'
-        >
-          {{ this.repos[2].name }}
-        </li>
-
-      </ul>
-      <nav class="orbit-bullets">
-        <button class="is-active" data-slide="0"></button>
-        <button data-slide="1"></button>
-        <button data-slide="2"></button>
-        <button data-slide="3"></button>
-      </nav>
+      <a class="left carousel-control" href="#repos" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="right carousel-control" href="#repos" role="button" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+      </a>
     </div>
   </div>
 </template>
@@ -54,17 +44,6 @@ import Repository from './Repository.vue'
 export default {
   components: {
     Repository
-  },
-  props: ['repos'],
-  computed: {
-    orbitSlide(repo) {
-      if (repo.name === 'SnackTrack') {
-        return 'orbit-slide is-active'
-      }
-      else {
-        return 'orbit-slide'
-      }
-    }
   }
 }
 </script>

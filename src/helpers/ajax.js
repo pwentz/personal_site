@@ -10,15 +10,21 @@ class Ajax {
     )
   }
 
+  getLanguages (repo) {
+    return Vue.http.get(
+      `https://api.github.com/repos/pwentz/${repo}/languages`
+    )
+  }
+
   getIdeaBox () {
     return Vue.http.get(
       'https://api.github.com/repos/pwentz/idea_box-idea_box_vue'
     )
   }
 
-  getRailsEngine () {
+  getPivot () {
     return Vue.http.get(
-      'https://api.github.com/repos/pwentz/rails_engine'
+      'https://api.github.com/repos/yoyo2code/the_pivot'
     )
   }
 }

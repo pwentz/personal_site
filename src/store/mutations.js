@@ -1,5 +1,6 @@
 import Vue from 'vue'
 const api = require('./../helpers/ajax')
+const repoHelper = require('./../helpers/repoHelper')
 
 const mutations = {
   MOUNT_PROJECTS (state) {
@@ -22,26 +23,29 @@ const mutations = {
     api.
       getSnackTrack().
         then(response => {
-          if (state.repos.indexOf(response.body) === -1) {
-            state.repos.push(response.body)
+          let snackTrack = repoHelper.formatSnackTrack(response.body)
+          if (state.repos.indexOf(snackTrack) === -1) {
+            console.log(snackTrack)
+            state.repos.push(snackTrack)
           }
         })
 
     api.
       getIdeaBox().
         then(response => {
-          if (state.repos.indexOf(response.body) === -1) {
-            state.repos.push(response.body)
+          let ideaBox = repoHelper.formatIdeaBox(response.body)
+          if (state.repos.indexOf(ideaBox) === -1) {
+            console.log(ideaBox)
+            state.repos.push(ideaBox)
           }
         })
 
-    api.
-      getRailsEngine().
-        then(response => {
-          if (state.repos.indexOf(response.body) === -1) {
-            state.repos.push(response.body)
-          }
-        })
+
+    // api.
+    //   getPivot().
+    //     then(response => {
+    //       repoHelper.formatPivot(response.body)
+    //     })
   }
 }
 
