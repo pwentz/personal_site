@@ -37,11 +37,6 @@
           {{ this.repos[2].name }}
         </li>
 
-        <!-- <li class='orbit-slide -->
-        <!--            is-active' -->
-        <!-- > -->
-        <!-- </li> -->
-
       </ul>
       <nav class="orbit-bullets">
         <button class="is-active" data-slide="0"></button>

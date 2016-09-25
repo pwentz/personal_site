@@ -1,50 +1,57 @@
 <template>
   <div
-    class='nav-bar'
   >
 
-    <ul
-      class='menu
-             align-right'
+    <nav
+      class='navbar
+             nav-bar
+             navbar-default'
     >
 
-      <li>
-        <a href='https://www.linkedin.com/in/patrick-wentz-19a474bb'
-           target='_blank'
-           class='menu-item'
-        >
-          <i class='fi-social-linkedin'></i>
-        </a>
-      </li>
+      <ul
+        class='nav
+               navbar-right
+               navbar-nav'
+      >
 
-      <li>
-        <a href='https://www.github.com/pwentz'
-           target='_blank'
-           class='menu-item'
-        >
-          <i class='fi-social-github'></i>
-        </a>
-      </li>
+        <li>
+          <a href='#'
+             class='menu-item'
+             v-on:click='mountProjects'
+          >
+            Projects
+          </a>
+        </li>
 
-      <li>
-        <a href='#'
-           class='menu-item'
-           v-on:click='mountProjects'
-        >
-          Projects
-        </a>
-      </li>
+        <li>
+          <a href='#'
+             class='menu-item'
+             v-on:click='mountBackground'
+          >
+            Background
+          </a>
+        </li>
 
-      <li>
-        <a href='#'
-           class='menu-item'
-           v-on:click='mountBackground'
-        >
-          Background
-        </a>
-      </li>
+        <li>
+          <a href='https://www.linkedin.com/in/patrick-wentz-19a474bb'
+             target='_blank'
+             class='menu-item'
+          >
+            <i class='fi-social-linkedin'></i>
+          </a>
+        </li>
 
-    </ul>
+        <li>
+          <a href='https://www.github.com/pwentz'
+             target='_blank'
+             class='menu-item'
+          >
+            <i class='fi-social-github'></i>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
 
   </div>
 </template>
@@ -63,10 +70,7 @@ export default {
 }
 .menu-item, .menu-item:hover {
   color: black;
-  margin-left: 50px;
+  margin-right: 50px;
   margin-top: 10px;
-}
-.menu {
-  margin-right: 150px;
 }
 </style>
