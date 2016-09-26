@@ -66,6 +66,7 @@ export default {
 .nav-bar {
   height: 65px;
   background-color: #99ff99;
+  margin-bottom: 0px;
   opacity: 0.8;
 }
 .menu-item, .menu-item:hover {

@@ -1,11 +1,16 @@
 <template>
   <div id="app"
   >
+
     <nav-bar
+      v-if='navBarMounted'
       :mountProjects='handleProjectsScroll'
       :mountBackground='handleBackgroundScroll'
     >
     </nav-bar>
+
+    <home>
+    </home>
 
     <projects
       v-if='projectsMounted'
@@ -22,6 +27,7 @@
 
 <script>
 import NavBar from './components/NavBar.vue'
+import Home from './components/Home.vue'
 import Projects from './components/Projects.vue'
 import Background from './components/Background.vue'
 
@@ -29,6 +35,7 @@ export default {
   components: {
     NavBar,
     Projects,
+    Home,
     Background
   },
 
@@ -36,6 +43,7 @@ export default {
     getters: {
       projectsMounted: state => state.projectsMounted,
       backgroundMounted: state => state.backgroundMounted,
+      navBarMounted: state => state.navBarMounted,
       repos: state => state.repos
     }
   },
